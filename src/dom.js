@@ -31,24 +31,35 @@ function displayProjects() {
     content.appendChild(projectsDiv);
 
     for (let i = 0; i < projects.length; i++) {
-        // console.log("test");
+        
         const div = document.createElement("div");
         projectsDiv.appendChild(div);
         div.classList.add(projects[i].projectTitle);
-        div.textContent = projects[i].projectTitle;
-
-        // console.log(projects[y].toDoItems[y].title);
-        // console.log(projects[y]);
-        // projects[y]
-        // console.log(projects[y].toDoItems);
+        div.textContent = "Project: " + projects[i].projectTitle;
 
         for (let a = 0; a < projects[i].toDoItems.length; a++) {
-            const div2 = document.createElement("div");
-            div.appendChild(div2);
-            div2.classList.add(projects[i].toDoItems[a].title);
-            div2.textContent = projects[i].toDoItems[a].title;
-            // console.log(a);
-            // console.log(projects[i].toDoItems[a].title);
+
+            const titleDiv = document.createElement("div");
+            div.appendChild(titleDiv);
+            // titleDiv.classList.add(projects[i].toDoItems[a].title);
+            titleDiv.classList.add("title");
+            titleDiv.textContent = "Title: " + projects[i].toDoItems[a].title;
+            
+            const descriptionDiv = document.createElement("div");
+            div.appendChild(descriptionDiv);
+            // descriptionDiv.classList.add(projects[i].toDoItems[a].description);
+            descriptionDiv.classList.add("description");
+            descriptionDiv.textContent = "Description: " + projects[i].toDoItems[a].description;
+
+            const dueDateDiv = document.createElement("div");
+            div.appendChild(dueDateDiv);
+            dueDateDiv.classList.add("due-date");
+            dueDateDiv.textContent = "Due Date: " + projects[i].toDoItems[a].dueDate;
+
+            const priorityDiv = document.createElement("div");
+            div.appendChild(priorityDiv);
+            priorityDiv.classList.add("priority");
+            priorityDiv.textContent = "Priority: " + projects[i].toDoItems[a].priority;
         }
 
         // const div2 = document.createElement("div");
