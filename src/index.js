@@ -5,7 +5,7 @@ import './style.css';
 import { ToDoItem, Project, exampleToDoItem, exampleToDoItem2, exampleToDoItem3, exampleToDoItem4, workProject, hobbyProject, projects } from "./app";
 // import { someVariable } from "./app";
 // import { test } from "./dom";
-import { displayProjects } from "./dom";
+import { displayProjects, addProject } from "./dom";
 
 console.log(ToDoItem);
 console.log(Project);
@@ -13,12 +13,14 @@ console.log(Project);
 console.log(exampleToDoItem);
 console.log(exampleToDoItem2);
 console.log(exampleToDoItem3);
+console.log(exampleToDoItem4);
 
 console.log(workProject);
 console.log(hobbyProject);
 
 console.log(projects);
 // test();
+// addProject();
 displayProjects();
 
 

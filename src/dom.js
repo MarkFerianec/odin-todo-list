@@ -1,23 +1,46 @@
-import { defaultProject, hobbiesProject, projects } from "./app";
+import { projects } from "./app";
 
-//possibly change name of this function displayProject.
-// function displayProjects() { 
+// function addProject() {
 
 //     const content = document.querySelector(".content");
 
-//     const projectDiv = document.createElement("project-div");
+//     const dialogDiv = document.createElement('div');
+//     dialogDiv.classList.add("dialog");
 
-//     const projectDiv2 = document.createElement("project-div2");
+//     content.appendChild(dialogDiv);
 
-//     content.appendChild(projectDiv);
+//     const projectForm = document.createElement('form');
+//     projectForm.classList.add('form');
 
-//     content.appendChild(projectDiv2);
+//     dialogDiv.appendChild(projectForm);
 
-//     projectDiv.textContent = defaultProject.projectTitle;
+//     let inputProjectName = document.createElement('input');
+//     inputProjectName.type = 'text';
+//     inputProjectName.name = 'project-name';
+//     // inputProjectName.value = 'test';
 
-//     projectDiv2.textContent = hobbiesProject.projectTitle;
+//     let inputProjectDescription = document.createElement('input');
+//     inputProjectDescription.type = 'text';
+//     inputProjectDescription.name = 'project-description';
 
-//     // this needs to be rewritten because it will not be dry.
+//     let inputProjectDueDate = document.createElement('input');
+//     inputProjectDueDate.type = 'text';
+//     inputProjectDueDate.name = 'due-date';
+
+//     let inputProjectPriority = document.createElement('input');
+//     inputProjectPriority.type = 'text';
+//     inputProjectPriority.name = 'due-date';
+
+//     let projectSubmitButton = document.createElement('input');
+//     projectSubmitButton.type = 'submit';
+//     projectSubmitButton.value = 'submit';
+
+//     projectForm.appendChild(inputProjectName);
+//     projectForm.appendChild(inputProjectDescription);
+//     projectForm.appendChild(inputProjectDueDate);
+//     projectForm.appendChild(inputProjectPriority);
+//     projectForm.appendChild(projectSubmitButton);
+//     // const projectTitle = document.createElement('label');
 
 // }
 
@@ -31,7 +54,7 @@ function displayProjects() {
     content.appendChild(projectsDiv);
 
     for (let i = 0; i < projects.length; i++) {
-        
+
         const div = document.createElement("div");
         projectsDiv.appendChild(div);
         div.classList.add(projects[i].projectTitle);
@@ -46,13 +69,11 @@ function displayProjects() {
 
             const titleDiv = document.createElement("div");
             toDoItemContainer.appendChild(titleDiv);
-            // titleDiv.classList.add(projects[i].toDoItems[a].title);
             titleDiv.classList.add("title");
             titleDiv.textContent = "Title: " + projects[i].toDoItems[a].title;
-            
+
             const descriptionDiv = document.createElement("div");
             toDoItemContainer.appendChild(descriptionDiv);
-            // descriptionDiv.classList.add(projects[i].toDoItems[a].description);
             descriptionDiv.classList.add("description");
             descriptionDiv.textContent = "Description: " + projects[i].toDoItems[a].description;
 
@@ -65,44 +86,40 @@ function displayProjects() {
             toDoItemContainer.appendChild(priorityDiv);
             priorityDiv.classList.add("priority");
             priorityDiv.textContent = "Priority: " + projects[i].toDoItems[a].priority;
+
+            const deleteToDoItem = document.createElement('button');
+            deleteToDoItem.classList.add("delete-to-do-item-button");
+            deleteToDoItem.textContent = 'Delete to-do item';
+
+            toDoItemContainer.appendChild(deleteToDoItem);
+
         }
 
-        // const div2 = document.createElement("div");
-        // div.appendChild(div2);
-        // div2.classList.add(projects[0].toDoItems[0].title);
-        // div2.textContent = projects[0].toDoItems[0].title; 
+        const buttonContainer = document.createElement('div');
+        buttonContainer.classList.add('button-container');
+
+        div.append(buttonContainer);
+
+        const addToDoItemButton = document.createElement('button');
+        addToDoItemButton.classList.add("add-to-do-item-button");
+        addToDoItemButton.textContent = 'Add to-do item';
+
+        buttonContainer.append(addToDoItemButton);
+
+        const deleteProjectButton = document.createElement('button');
+        deleteProjectButton.classList.add("delete-project-button");
+        deleteProjectButton.textContent = 'Delete project';
+
+        buttonContainer.append(deleteProjectButton);
+
     }
-
-    // console.log(projects[0].toDoItems.length);
-
-    // for (let j = 0; j < projects[0].toDoItems.length; j++) {
-    //     console.log(projects[0].toDoItems[j].title);
-    // }
-
-    // for (let k = 0; k < projects[1].toDoItems.length; k++) {
-    //     console.log(projects[1].toDoItems[k].title);
-    // }
-
-    // important:
-    // for (let y = 0; y < projects.length; y++) {
-    //     // console.log(projects[y].toDoItems[y].title);
-    //     // console.log(projects[y]);
-    //     // projects[y]
-    //     // console.log(projects[y].toDoItems);
-
-    //     for (let a = 0; a < projects[y].toDoItems.length; a++) {
-    //         // console.log(a);
-    //         console.log(projects[y].toDoItems[a].title);
-    //     }
-    // }
-
-    // for (let y = 0; y < projects.length; y++) {
-    //     console.log(projects[y].toDoItems[y].title);
-    // }
 
 }
 
 export { displayProjects };
+// export { displayProjects, addProject };
+
+
 
 
 
@@ -201,4 +218,41 @@ export { displayProjects };
 //             console.log(j);
 //         }
 //     }
+// }
+
+
+
+
+
+
+
+
+
+
+
+// console.log(projects[0].toDoItems.length);
+
+// for (let j = 0; j < projects[0].toDoItems.length; j++) {
+//     console.log(projects[0].toDoItems[j].title);
+// }
+
+// for (let k = 0; k < projects[1].toDoItems.length; k++) {
+//     console.log(projects[1].toDoItems[k].title);
+// }
+
+// important:
+// for (let y = 0; y < projects.length; y++) {
+//     // console.log(projects[y].toDoItems[y].title);
+//     // console.log(projects[y]);
+//     // projects[y]
+//     // console.log(projects[y].toDoItems);
+
+//     for (let a = 0; a < projects[y].toDoItems.length; a++) {
+//         // console.log(a);
+//         console.log(projects[y].toDoItems[a].title);
+//     }
+// }
+
+// for (let y = 0; y < projects.length; y++) {
+//     console.log(projects[y].toDoItems[y].title);
 // }

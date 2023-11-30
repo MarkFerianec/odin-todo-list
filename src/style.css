@@ -1,3 +1,7 @@
+.content {
+    display: flex;
+}
+
 .projects {
     display: flex;
     padding: 1rem;
@@ -6,4 +10,15 @@
 
 .to-do-item-container {
     margin: 1rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 10rem;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
 }
