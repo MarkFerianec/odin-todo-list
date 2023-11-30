@@ -1,5 +1,5 @@
 // Array for project objects
-// projects = [];
+let projects = [];
 
 class ToDoItem {
     constructor(title, description, dueDate, priority) {
@@ -23,14 +23,21 @@ class Project {
 let exampleToDoItem = new ToDoItem("Email", "Read emails", "December 1, 2023", "Medium");
 let exampleToDoItem2 = new ToDoItem("Program", "Computer programming", "December 1, 2023", "High");
 
-let exampleToDoItem3 = new ToDoItem("Play Guitar", "Practice guitar", "December 1, 2023", "Low");
+let exampleToDoItem3 = new ToDoItem("Guitar", "Practice guitar", "December 1, 2023", "Low");
+let exampleToDoItem4 = new ToDoItem("Exercise", "Go to gym", "December 1, 2023", "Low");
 
-let defaultProject = new Project("Work");
-let hobbiesProject = new Project("Hobbies");
+let workProject = new Project("Work");
+let hobbyProject = new Project("Hobbies");
 
-defaultProject.toDoItems.push(exampleToDoItem);
-defaultProject.toDoItems.push(exampleToDoItem2);
+workProject.toDoItems.push(exampleToDoItem);
+workProject.toDoItems.push(exampleToDoItem2);
+
+hobbyProject.toDoItems.push(exampleToDoItem3);
+hobbyProject.toDoItems.push(exampleToDoItem4);
+
+projects.push(workProject);
+projects.push(hobbyProject);
 
 // export { ToDoItem, Project, someVariable };
 // export { ToDoItem, Project };
-export { ToDoItem, Project, exampleToDoItem, exampleToDoItem2, exampleToDoItem3, defaultProject, hobbiesProject };
+export { ToDoItem, Project, exampleToDoItem, exampleToDoItem2, exampleToDoItem3, exampleToDoItem4, workProject, hobbyProject, projects };
