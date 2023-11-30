@@ -1,3 +1,4 @@
+import './style.css';
 // import { home } from "./home"; // Example of how an import statement should look.
 // import { ToDoItem } from "./app";
 // import { Project } from "./app";
