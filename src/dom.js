@@ -39,25 +39,30 @@ function displayProjects() {
 
         for (let a = 0; a < projects[i].toDoItems.length; a++) {
 
+            const toDoItemContainer = document.createElement("div");
+            toDoItemContainer.classList.add(projects[i].toDoItems[a].title);
+            toDoItemContainer.classList.add("to-do-item-container");
+            div.appendChild(toDoItemContainer);
+
             const titleDiv = document.createElement("div");
-            div.appendChild(titleDiv);
+            toDoItemContainer.appendChild(titleDiv);
             // titleDiv.classList.add(projects[i].toDoItems[a].title);
             titleDiv.classList.add("title");
             titleDiv.textContent = "Title: " + projects[i].toDoItems[a].title;
             
             const descriptionDiv = document.createElement("div");
-            div.appendChild(descriptionDiv);
+            toDoItemContainer.appendChild(descriptionDiv);
             // descriptionDiv.classList.add(projects[i].toDoItems[a].description);
             descriptionDiv.classList.add("description");
             descriptionDiv.textContent = "Description: " + projects[i].toDoItems[a].description;
 
             const dueDateDiv = document.createElement("div");
-            div.appendChild(dueDateDiv);
+            toDoItemContainer.appendChild(dueDateDiv);
             dueDateDiv.classList.add("due-date");
             dueDateDiv.textContent = "Due Date: " + projects[i].toDoItems[a].dueDate;
 
             const priorityDiv = document.createElement("div");
-            div.appendChild(priorityDiv);
+            toDoItemContainer.appendChild(priorityDiv);
             priorityDiv.classList.add("priority");
             priorityDiv.textContent = "Priority: " + projects[i].toDoItems[a].priority;
         }
