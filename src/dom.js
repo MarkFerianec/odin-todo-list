@@ -1,49 +1,5 @@
 import { projects, deleteToDoItemFunction, createNewToDo } from "./app";
 
-// function addProject() {
-
-//     const content = document.querySelector(".content");
-
-//     const dialogDiv = document.createElement('div');
-//     dialogDiv.classList.add("dialog");
-
-//     content.appendChild(dialogDiv);
-
-//     const projectForm = document.createElement('form');
-//     projectForm.classList.add('form');
-
-//     dialogDiv.appendChild(projectForm);
-
-//     let inputProjectName = document.createElement('input');
-//     inputProjectName.type = 'text';
-//     inputProjectName.name = 'project-name';
-//     // inputProjectName.value = 'test';
-
-//     let inputProjectDescription = document.createElement('input');
-//     inputProjectDescription.type = 'text';
-//     inputProjectDescription.name = 'project-description';
-
-//     let inputProjectDueDate = document.createElement('input');
-//     inputProjectDueDate.type = 'text';
-//     inputProjectDueDate.name = 'due-date';
-
-//     let inputProjectPriority = document.createElement('input');
-//     inputProjectPriority.type = 'text';
-//     inputProjectPriority.name = 'due-date';
-
-//     let projectSubmitButton = document.createElement('input');
-//     projectSubmitButton.type = 'submit';
-//     projectSubmitButton.value = 'submit';
-
-//     projectForm.appendChild(inputProjectName);
-//     projectForm.appendChild(inputProjectDescription);
-//     projectForm.appendChild(inputProjectDueDate);
-//     projectForm.appendChild(inputProjectPriority);
-//     projectForm.appendChild(projectSubmitButton);
-//     // const projectTitle = document.createElement('label');
-
-// }
-
 function displayProjects() {
 
     const content = document.querySelector(".content");
@@ -76,10 +32,37 @@ function displayProjects() {
         function createNewToDo() {
             // alert('test');
             const createdNewToDo = document.createElement("div");
-            createdNewToDo.classList.add("to-do-item-container");
-            div.appendChild(createdNewToDo);
+            createdNewToDo.classList.add("to-do-item-container");                       //  MOD THIS
+            // div.appendChild(createdNewToDo);
 
-            createdNewToDo.textContent = 'test';
+            // createdNewToDo.textContent = 'test';
+            // createdNewToDo = 
+            const toDoItemTitleDiv = document.createElement("div");
+            const toDoItemTitle = document.querySelector('#title');
+            let titleOfToDoItem = toDoItemTitle.value;
+            toDoItemTitleDiv.textContent = titleOfToDoItem;
+
+            const toDoItemDescriptionDiv = document.createElement("div");
+            const toDoItemDescription = document.querySelector('#description');
+            let descriptionOfToDoItem = toDoItemDescription.value;
+            toDoItemDescriptionDiv.textContent = descriptionOfToDoItem;
+
+            const toDoItemDueDateDiv = document.createElement("div");
+            const toDoItemDueDate = document.querySelector('#duedate');
+            let dueDateOfToDoItem = toDoItemDueDate.value;
+            toDoItemDueDateDiv.textContent = dueDateOfToDoItem;
+
+            const toDoItemPriorityDiv = document.createElement("div");
+            const toDoItemPriority = document.querySelector('#priority');
+            let priorityOfToDoItem = toDoItemPriority.value;
+            toDoItemPriorityDiv.textContent = priorityOfToDoItem;
+
+            createdNewToDo.appendChild(toDoItemTitleDiv);
+            createdNewToDo.appendChild(toDoItemDescriptionDiv);
+            createdNewToDo.appendChild(toDoItemDueDateDiv);
+            createdNewToDo.appendChild(toDoItemPriorityDiv);
+
+            div.appendChild(createdNewToDo);
         }
 
         const deleteProjectButton = document.createElement('button');
@@ -151,6 +134,12 @@ function displayProjects() {
     }
 
 }
+
+// function addToDoItemButtonFunction() {
+//     const toDoItemTitle = document.querySelector('#title');
+//     let titleOfToDoItem = toDoItemTitle.value;
+
+// }
 
 // function deleteToDoItemFunction() {
 //     alert("hi");
@@ -296,4 +285,56 @@ export { displayProjects };
 
 // for (let y = 0; y < projects.length; y++) {
 //     console.log(projects[y].toDoItems[y].title);
+// }
+
+
+
+
+
+
+
+
+
+// function addProject() {
+
+//     const content = document.querySelector(".content");
+
+//     const dialogDiv = document.createElement('div');
+//     dialogDiv.classList.add("dialog");
+
+//     content.appendChild(dialogDiv);
+
+//     const projectForm = document.createElement('form');
+//     projectForm.classList.add('form');
+
+//     dialogDiv.appendChild(projectForm);
+
+//     let inputProjectName = document.createElement('input');
+//     inputProjectName.type = 'text';
+//     inputProjectName.name = 'project-name';
+//     // inputProjectName.value = 'test';
+
+//     let inputProjectDescription = document.createElement('input');
+//     inputProjectDescription.type = 'text';
+//     inputProjectDescription.name = 'project-description';
+
+//     let inputProjectDueDate = document.createElement('input');
+//     inputProjectDueDate.type = 'text';
+//     inputProjectDueDate.name = 'due-date';
+
+//     let inputProjectPriority = document.createElement('input');
+//     inputProjectPriority.type = 'text';
+//     inputProjectPriority.name = 'due-date';
+
+//     let projectSubmitButton = document.createElement('input');
+//     projectSubmitButton.type = 'submit';
+//     projectSubmitButton.value = 'submit';
+
+//     projectForm.appendChild(inputProjectName);
+//     projectForm.appendChild(inputProjectDescription);
+//     projectForm.appendChild(inputProjectDueDate);
+//     projectForm.appendChild(inputProjectPriority);
+//     projectForm.appendChild(projectSubmitButton);
+//     // const projectTitle = document.createElement('label');
+
 // }
