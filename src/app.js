@@ -1,3 +1,5 @@
+import { displayProjects } from "./dom";
+
 // Array for project objects
 let projects = [];
 
@@ -38,6 +40,63 @@ hobbyProject.toDoItems.push(exampleToDoItem4);
 projects.push(workProject);
 projects.push(hobbyProject);
 
+// function deleteToDoItemFunction() {
+
+//     // toDoItemContainer.classList.add(projects[0].toDoItems[0].title);
+
+//     // hobbyProject.toDoItems.pop();
+//     // for (let i = 0; i < hobbyProject.toDoItems.length; i++) {
+
+//     // }
+//     // const buttonQuerySelector = document.querySelector('delete-to-do-item-button');
+//     // const toDoItemTitleQuerySelector = document.querySelector(ToDoItem.title);
+
+//     // console.log(projects);
+//     // alert("hi");
+//     // const index = array.indexOf();
+//     // if (index > -1) { // only splice array when item is found
+//     //     array.splice(index, 1); // 2nd parameter means remove one item only
+//     // }
+// }
+
+function createNewToDo() {
+    // alert("hi");
+    let exampleToDoItem5 = new ToDoItem("Test", "Testing emails", "December 1, 2023", "High");
+    workProject.toDoItems.push(exampleToDoItem5);
+    // projects.push(workProject); //this messes it up for some reason
+    console.log(exampleToDoItem5);
+    // displayProjects(); //Maybe something similar to this?? //Something that clears DOM too???
+    // clear();
+    displayProjects();
+    clear();
+}
+
+function clear() {
+    const content = document.querySelector('.content');
+    const projects = document.querySelector('.projects');
+    content.removeChild(projects);
+}
+
+function createNewProject() {
+    const projects = document.querySelector('projects');
+    const newProjectDiv = document.createElement('div');
+    newProjectDiv.textContent = 'test';
+    projects.appendChild(newProjectDiv);
+}
+
+// function deleteToDoItem() {
+
+// }
+
 // export { ToDoItem, Project, someVariable };
 // export { ToDoItem, Project };
-export { ToDoItem, Project, exampleToDoItem, exampleToDoItem2, exampleToDoItem3, exampleToDoItem4, workProject, hobbyProject, projects };
+
+// export {
+//     ToDoItem, Project, exampleToDoItem, exampleToDoItem2, exampleToDoItem3, exampleToDoItem4, workProject, hobbyProject, projects,
+//     deleteToDoItemFunction, createNewToDo, clear, createNewProject
+// };
+
+export {
+    ToDoItem, Project, exampleToDoItem, exampleToDoItem2, exampleToDoItem3, exampleToDoItem4, workProject, hobbyProject, projects,
+    createNewToDo, clear, createNewProject
+};

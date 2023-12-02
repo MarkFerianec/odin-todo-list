@@ -5,7 +5,7 @@ import './style.css';
 import { ToDoItem, Project, exampleToDoItem, exampleToDoItem2, exampleToDoItem3, exampleToDoItem4, workProject, hobbyProject, projects } from "./app";
 // import { someVariable } from "./app";
 // import { test } from "./dom";
-import { displayProjects, addProject } from "./dom";
+import { displayProjects } from "./dom";
 
 console.log(ToDoItem);
 console.log(Project);

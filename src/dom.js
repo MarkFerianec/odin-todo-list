@@ -1,4 +1,4 @@
-import { projects } from "./app";
+import { projects, deleteToDoItemFunction, createNewToDo } from "./app";
 
 // function addProject() {
 
@@ -87,11 +87,28 @@ function displayProjects() {
             priorityDiv.classList.add("priority");
             priorityDiv.textContent = "Priority: " + projects[i].toDoItems[a].priority;
 
-            const deleteToDoItem = document.createElement('button');
-            deleteToDoItem.classList.add("delete-to-do-item-button");
-            deleteToDoItem.textContent = 'Delete to-do item';
+            const deleteToDoItemButton = document.createElement('button');
+            deleteToDoItemButton.classList.add("delete-to-do-item-button");
+            deleteToDoItemButton.classList.add(projects[i].toDoItems[a].title);       //added this recently, it might help/work.
+            deleteToDoItemButton.textContent = 'Delete to-do item';
 
-            toDoItemContainer.appendChild(deleteToDoItem);
+            toDoItemContainer.appendChild(deleteToDoItemButton);
+
+            deleteToDoItemButton.addEventListener('click', deleteToDoItemFunction);
+
+            function deleteToDoItemFunction() {
+                console.log(projects[i].toDoItems[a].title);
+                // alert(projects[i].toDoItems[a].title);
+                // alert(projects[i].projectTitle);
+                // projects[i].projectTitle.removeChild(projects[i].toDoItems[a].title);
+                // const something0 = document.querySelector(projects[i].toDoItems[a].title);
+                // console.log(something0);
+                // const something = document.querySelector(projects[i].projectTitle);
+                // projectsDiv.removeChild(something);
+                // projectsDiv.removeChild(toDoItemContainer);
+                div.removeChild(toDoItemContainer);                          // this does not delete the object.
+            }
+
 
         }
 
@@ -106,18 +123,26 @@ function displayProjects() {
 
         buttonContainer.append(addToDoItemButton);
 
+        addToDoItemButton.addEventListener('click', createNewToDo);
+
         const deleteProjectButton = document.createElement('button');
         deleteProjectButton.classList.add("delete-project-button");
         deleteProjectButton.textContent = 'Delete project';
 
         buttonContainer.append(deleteProjectButton);
 
+
     }
 
 }
 
-export { displayProjects };
+// function deleteToDoItemFunction() {
+//     alert("hi");
+// }
+
+// export { displayProjects };
 // export { displayProjects, addProject };
+export { displayProjects };
 
 
 
