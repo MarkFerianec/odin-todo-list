@@ -65,7 +65,7 @@ function displayProjects() {
 
             const deleteToDoItemButton = document.createElement('button');
             deleteToDoItemButton.classList.add("delete-to-do-item-button");
-            // deleteToDoItemButton.classList.add(projects[i].toDoItems[a].title);       
+            // deleteToDoItemButton.classList.add(projects[i].toDoItems[a].title);   //this probably needs to be modified to something similar to be used    
             deleteToDoItemButton.textContent = 'Delete to-do item';
 
             createdNewToDo.appendChild(deleteToDoItemButton);
@@ -161,6 +161,33 @@ function displayProjects() {
 
 }
 
+const newProjectButtonQuerySelector = document.querySelector('#submit');
+
+newProjectButtonQuerySelector.addEventListener('click', addNewProject);
+
+function addNewProject() {
+
+    // event.preventDefault()
+
+    const projectsQuerySelector = document.querySelector('.projects');
+
+    const newProjectDiv = document.createElement('div');
+
+    let titleOfNewProject = document.querySelector('#project-title');
+
+    // newProjectDiv.classList.add(titleOfNewProject);
+
+    newProjectDiv.textContent = "Project: " + titleOfNewProject.value;
+
+    projectsQuerySelector.appendChild(newProjectDiv);
+
+
+    // const toDoItemTitleDiv = document.createElement("div");
+    // const toDoItemTitle = document.querySelector('#title');
+    // let titleOfToDoItem = toDoItemTitle.value;
+    // toDoItemTitleDiv.textContent = titleOfToDoItem;
+}
+
 // function addToDoItemButtonFunction() {
 //     const toDoItemTitle = document.querySelector('#title');
 //     let titleOfToDoItem = toDoItemTitle.value;
@@ -173,7 +200,7 @@ function displayProjects() {
 
 // export { displayProjects };
 // export { displayProjects, addProject };
-export { displayProjects };
+export { displayProjects, addNewProject };
 
 
 

@@ -5,7 +5,7 @@ import './style.css';
 import { ToDoItem, Project, exampleToDoItem, exampleToDoItem2, exampleToDoItem3, exampleToDoItem4, workProject, hobbyProject, projects } from "./app";
 // import { someVariable } from "./app";
 // import { test } from "./dom";
-import { displayProjects } from "./dom";
+import { displayProjects, addNewProject } from "./dom";
 
 console.log(ToDoItem);
 console.log(Project);
@@ -22,8 +22,11 @@ console.log(projects);
 // test();
 // addProject();
 displayProjects();
+// addNewProject();
 
+// const newProjectButtonQuerySelector = document.querySelector('#submit');
 
+// newProjectButtonQuerySelector.addEventListener('click', addNewProject);
 
 // let exampleToDoItem = new ToDoItem("Study", "Study hard", "December 1, 2023", "High");
 
