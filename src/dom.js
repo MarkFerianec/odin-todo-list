@@ -62,7 +62,33 @@ function displayProjects() {
             createdNewToDo.appendChild(toDoItemDueDateDiv);
             createdNewToDo.appendChild(toDoItemPriorityDiv);
 
+
+            const deleteToDoItemButton = document.createElement('button');
+            deleteToDoItemButton.classList.add("delete-to-do-item-button");
+            // deleteToDoItemButton.classList.add(projects[i].toDoItems[a].title);       
+            deleteToDoItemButton.textContent = 'Delete to-do item';
+
+            createdNewToDo.appendChild(deleteToDoItemButton);
+
             div.appendChild(createdNewToDo);
+
+
+
+            deleteToDoItemButton.addEventListener('click', deleteToDoItemFunction);
+
+            function deleteToDoItemFunction() {
+                // console.log(projects[i].toDoItems[a].title);
+                // alert(projects[i].toDoItems[a].title);
+                // alert(projects[i].projectTitle);
+                // projects[i].projectTitle.removeChild(projects[i].toDoItems[a].title);
+                // const something0 = document.querySelector(projects[i].toDoItems[a].title);
+                // console.log(something0);
+                // const something = document.querySelector(projects[i].projectTitle);
+                // projectsDiv.removeChild(something);
+                // projectsDiv.removeChild(toDoItemContainer);
+                div.removeChild(createdNewToDo);                          // this does not delete the object.
+            }
+
         }
 
         const deleteProjectButton = document.createElement('button');
@@ -107,7 +133,7 @@ function displayProjects() {
 
             const deleteToDoItemButton = document.createElement('button');
             deleteToDoItemButton.classList.add("delete-to-do-item-button");
-            deleteToDoItemButton.classList.add(projects[i].toDoItems[a].title);       //added this recently, it might help/work.
+            deleteToDoItemButton.classList.add(projects[i].toDoItems[a].title);
             deleteToDoItemButton.textContent = 'Delete to-do item';
 
             toDoItemContainer.appendChild(deleteToDoItemButton);
