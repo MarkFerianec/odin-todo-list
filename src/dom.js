@@ -131,7 +131,12 @@ function displayProjects() {
 
         buttonContainer.append(deleteProjectButton);
 
+        deleteProjectButton.addEventListener('click', deleteProjectFunction); 
 
+        function deleteProjectFunction() {
+            // alert('test');
+            projectsDiv.removeChild(div);
+        }
     }
 
 }
