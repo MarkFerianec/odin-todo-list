@@ -60,6 +60,41 @@ function displayProjects() {
         div.classList.add(projects[i].projectTitle);
         div.textContent = "Project: " + projects[i].projectTitle;
 
+        const buttonContainer = document.createElement('div');
+        buttonContainer.classList.add('button-container');
+
+        div.append(buttonContainer);
+
+        const addToDoItemButton = document.createElement('button');
+        addToDoItemButton.classList.add("add-to-do-item-button");
+        addToDoItemButton.textContent = 'Add to-do item';
+
+        buttonContainer.append(addToDoItemButton);
+
+        addToDoItemButton.addEventListener('click', createNewToDo);
+
+        function createNewToDo() {
+            // alert('test');
+            const createdNewToDo = document.createElement("div");
+            createdNewToDo.classList.add("to-do-item-container");
+            div.appendChild(createdNewToDo);
+
+            createdNewToDo.textContent = 'test';
+        }
+
+        const deleteProjectButton = document.createElement('button');
+        deleteProjectButton.classList.add("delete-project-button");
+        deleteProjectButton.textContent = 'Delete project';
+
+        buttonContainer.append(deleteProjectButton);
+
+        deleteProjectButton.addEventListener('click', deleteProjectFunction);
+
+        function deleteProjectFunction() {
+            // alert('test');
+            projectsDiv.removeChild(div);
+        }
+
         for (let a = 0; a < projects[i].toDoItems.length; a++) {
 
             const toDoItemContainer = document.createElement("div");
@@ -112,31 +147,7 @@ function displayProjects() {
 
         }
 
-        const buttonContainer = document.createElement('div');
-        buttonContainer.classList.add('button-container');
 
-        div.append(buttonContainer);
-
-        const addToDoItemButton = document.createElement('button');
-        addToDoItemButton.classList.add("add-to-do-item-button");
-        addToDoItemButton.textContent = 'Add to-do item';
-
-        buttonContainer.append(addToDoItemButton);
-
-        addToDoItemButton.addEventListener('click', createNewToDo);
-
-        const deleteProjectButton = document.createElement('button');
-        deleteProjectButton.classList.add("delete-project-button");
-        deleteProjectButton.textContent = 'Delete project';
-
-        buttonContainer.append(deleteProjectButton);
-
-        deleteProjectButton.addEventListener('click', deleteProjectFunction); 
-
-        function deleteProjectFunction() {
-            // alert('test');
-            projectsDiv.removeChild(div);
-        }
     }
 
 }

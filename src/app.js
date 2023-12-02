@@ -59,30 +59,30 @@ projects.push(hobbyProject);
 //     // }
 // }
 
-function createNewToDo() {
-    // alert("hi");
-    let exampleToDoItem5 = new ToDoItem("Test", "Testing emails", "December 1, 2023", "High");
-    workProject.toDoItems.push(exampleToDoItem5);
-    // projects.push(workProject); //this messes it up for some reason
-    console.log(exampleToDoItem5);
-    // displayProjects(); //Maybe something similar to this?? //Something that clears DOM too???
-    // clear();
-    displayProjects();
-    clear();
-}
+// function createNewToDo() {
+//     // alert("hi");
+//     let exampleToDoItem5 = new ToDoItem("Test", "Testing emails", "December 1, 2023", "High");
+//     workProject.toDoItems.push(exampleToDoItem5);
+//     // projects.push(workProject); //this messes it up for some reason
+//     console.log(exampleToDoItem5);
+//     // displayProjects(); //Maybe something similar to this?? //Something that clears DOM too???
+//     // clear();
+//     displayProjects();
+//     clear();
+// }
 
-function clear() {
-    const content = document.querySelector('.content');
-    const projects = document.querySelector('.projects');
-    content.removeChild(projects);
-}
+// function clear() {
+//     const content = document.querySelector('.content');
+//     const projects = document.querySelector('.projects');
+//     content.removeChild(projects);
+// }
 
-function createNewProject() {
-    const projects = document.querySelector('projects');
-    const newProjectDiv = document.createElement('div');
-    newProjectDiv.textContent = 'test';
-    projects.appendChild(newProjectDiv);
-}
+// function createNewProject() {
+//     const projects = document.querySelector('projects');
+//     const newProjectDiv = document.createElement('div');
+//     newProjectDiv.textContent = 'test';
+//     projects.appendChild(newProjectDiv);
+// }
 
 // function deleteToDoItem() {
 
@@ -96,7 +96,20 @@ function createNewProject() {
 //     deleteToDoItemFunction, createNewToDo, clear, createNewProject
 // };
 
+// export {
+//     ToDoItem, Project, exampleToDoItem, exampleToDoItem2, exampleToDoItem3, exampleToDoItem4, workProject, hobbyProject, projects,
+//     createNewToDo, clear, createNewProject
+// };
+
+// export {
+//     ToDoItem, Project, exampleToDoItem, exampleToDoItem2, exampleToDoItem3, exampleToDoItem4, workProject, hobbyProject, projects,
+//     createNewToDo, clear
+// };
+
+// export {
+//     ToDoItem, Project, exampleToDoItem, exampleToDoItem2, exampleToDoItem3, exampleToDoItem4, workProject, hobbyProject, projects, clear
+// };
+
 export {
-    ToDoItem, Project, exampleToDoItem, exampleToDoItem2, exampleToDoItem3, exampleToDoItem4, workProject, hobbyProject, projects,
-    createNewToDo, clear, createNewProject
+    ToDoItem, Project, exampleToDoItem, exampleToDoItem2, exampleToDoItem3, exampleToDoItem4, workProject, hobbyProject, projects
 };
