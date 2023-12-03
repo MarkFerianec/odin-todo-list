@@ -163,13 +163,16 @@ function displayProjects() {
 
 }
 
+
+
+
+
 const newProjectButtonQuerySelector = document.querySelector('#submit');
 
 newProjectButtonQuerySelector.addEventListener('click', addNewProject);
 
-function addNewProject() {
 
-    // event.preventDefault()
+function addNewProject() {
 
     const projectsQuerySelector = document.querySelector('.projects');
 
@@ -183,22 +186,87 @@ function addNewProject() {
 
     projectsQuerySelector.appendChild(newProjectDiv);
 
+    const div = document.createElement("div");
+    newProjectDiv.appendChild(div);
 
-    // const toDoItemTitleDiv = document.createElement("div");
-    // const toDoItemTitle = document.querySelector('#title');
-    // let titleOfToDoItem = toDoItemTitle.value;
-    // toDoItemTitleDiv.textContent = titleOfToDoItem;
+    const buttonContainer = document.createElement('div');
+    buttonContainer.classList.add('button-container');
+
+    div.append(buttonContainer);
+
+    const addToDoItemButton = document.createElement('button');
+    addToDoItemButton.classList.add("add-to-do-item-button");
+    addToDoItemButton.textContent = 'Add to-do item';
+
+    buttonContainer.append(addToDoItemButton);
+
+    addToDoItemButton.addEventListener('click', createNewToDo);
+
+    function createNewToDo() {
+        const createdNewToDo = document.createElement("div");
+
+        const toDoItemTitleDiv = document.createElement("div");
+        const toDoItemTitle = document.querySelector('#title');
+        let titleOfToDoItem = toDoItemTitle.value;
+        toDoItemTitleDiv.textContent = titleOfToDoItem;
+
+        const toDoItemDescriptionDiv = document.createElement("div");
+        const toDoItemDescription = document.querySelector('#description');
+        let descriptionOfToDoItem = toDoItemDescription.value;
+        toDoItemDescriptionDiv.textContent = descriptionOfToDoItem;
+
+        const toDoItemDueDateDiv = document.createElement("div");
+        const toDoItemDueDate = document.querySelector('#duedate');
+        let dueDateOfToDoItem = toDoItemDueDate.value;
+        toDoItemDueDateDiv.textContent = dueDateOfToDoItem;
+
+        const toDoItemPriorityDiv = document.createElement("div");
+        const toDoItemPriority = document.querySelector('#priority');
+        let priorityOfToDoItem = toDoItemPriority.value;
+        toDoItemPriorityDiv.textContent = priorityOfToDoItem;
+
+        createdNewToDo.appendChild(toDoItemTitleDiv);
+        createdNewToDo.appendChild(toDoItemDescriptionDiv);
+        createdNewToDo.appendChild(toDoItemDueDateDiv);
+        createdNewToDo.appendChild(toDoItemPriorityDiv);
+
+
+        const deleteToDoItemButton = document.createElement('button');
+        deleteToDoItemButton.classList.add("delete-to-do-item-button");
+        deleteToDoItemButton.textContent = 'Delete to-do item';
+
+        createdNewToDo.appendChild(deleteToDoItemButton);
+
+        createdNewToDo.classList.add(titleOfToDoItem);
+        createdNewToDo.classList.add("to-do-item-container");
+
+        div.appendChild(createdNewToDo);
+
+        deleteToDoItemButton.addEventListener('click', deleteToDoItemFunction);
+
+        function deleteToDoItemFunction() {
+            div.removeChild(createdNewToDo);                          // this does not delete the object.
+        }
+
+    }
+
+    const deleteProjectButton = document.createElement('button');
+    deleteProjectButton.classList.add("delete-project-button");
+    deleteProjectButton.textContent = 'Delete project';
+
+    buttonContainer.append(deleteProjectButton);
+
+    deleteProjectButton.addEventListener('click', deleteProjectFunction);
+
+    function deleteProjectFunction() {
+        // alert('test');
+        // newProjectDiv.removeChild(div);
+        // const newProjectButtonQuerySelector = document.querySelector('#submit');
+        const projectsDiv = document.querySelector('.projects');
+        projectsDiv.removeChild(newProjectDiv);
+    }
+
 }
-
-// function addToDoItemButtonFunction() {
-//     const toDoItemTitle = document.querySelector('#title');
-//     let titleOfToDoItem = toDoItemTitle.value;
-
-// }
-
-// function deleteToDoItemFunction() {
-//     alert("hi");
-// }
 
 // export { displayProjects };
 // export { displayProjects, addProject };
