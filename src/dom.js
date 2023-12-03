@@ -175,7 +175,7 @@ function addNewProject() {
 
     let titleOfNewProject = document.querySelector('#project-title');
 
-    // newProjectDiv.classList.add(titleOfNewProject);
+    newProjectDiv.classList.add(titleOfNewProject.value);
 
     newProjectDiv.textContent = "Project: " + titleOfNewProject.value;
 
