@@ -186,13 +186,10 @@ function addNewProject() {
 
     projectsQuerySelector.appendChild(newProjectDiv);
 
-    const div = document.createElement("div");
-    newProjectDiv.appendChild(div);
-
     const buttonContainer = document.createElement('div');
     buttonContainer.classList.add('button-container');
 
-    div.append(buttonContainer);
+    newProjectDiv.append(buttonContainer);
 
     const addToDoItemButton = document.createElement('button');
     addToDoItemButton.classList.add("add-to-do-item-button");
@@ -240,12 +237,12 @@ function addNewProject() {
         createdNewToDo.classList.add(titleOfToDoItem);
         createdNewToDo.classList.add("to-do-item-container");
 
-        div.appendChild(createdNewToDo);
+        newProjectDiv.appendChild(createdNewToDo);
 
         deleteToDoItemButton.addEventListener('click', deleteToDoItemFunction);
 
         function deleteToDoItemFunction() {
-            div.removeChild(createdNewToDo);                          // this does not delete the object.
+            newProjectDiv.removeChild(createdNewToDo);                          // this does not delete the object.
         }
 
     }
