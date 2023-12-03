@@ -12,13 +12,21 @@
     margin: 1rem;
 }
 
-.form {
+/* form {
     display: flex;
     flex-direction: column;
     width: 10rem;
-}
+} */
 
 .button-container {
     display: flex;
     flex-direction: column;
+}
+
+.project-form {
+    margin: 1rem;
+}
+
+.projects > div {
+    width: 12rem;
 }
