@@ -32,7 +32,6 @@ function displayProjects() {
         function createNewToDo() {
             // alert('test');
             const createdNewToDo = document.createElement("div");
-            createdNewToDo.classList.add("to-do-item-container");                       //  MOD THIS
             // div.appendChild(createdNewToDo);
 
             // createdNewToDo.textContent = 'test';
@@ -69,6 +68,9 @@ function displayProjects() {
             deleteToDoItemButton.textContent = 'Delete to-do item';
 
             createdNewToDo.appendChild(deleteToDoItemButton);
+
+            createdNewToDo.classList.add(titleOfToDoItem);
+            createdNewToDo.classList.add("to-do-item-container");
 
             div.appendChild(createdNewToDo);
 
