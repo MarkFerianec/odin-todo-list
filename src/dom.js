@@ -27,7 +27,8 @@ function displayProjects() {
 
         buttonContainer.append(addToDoItemButton);
 
-        addToDoItemButton.addEventListener('click', createNewToDo);
+        // addToDoItemButton.addEventListener('click', createNewToDo);
+        addToDoItemButton.addEventListener('click', addToDoItemAndClearForm);
 
         function createNewToDo() {
             // alert('test');
@@ -158,6 +159,21 @@ function displayProjects() {
 
         }
 
+        function clearAddToDoItemForm() {
+            const toDoItemTitle = document.querySelector('#title');
+            const toDoItemDescription = document.querySelector('#description');
+            const toDoItemDueDate = document.querySelector('#duedate');
+            const toDoItemPriority = document.querySelector('#priority');
+            toDoItemTitle.value = '';
+            toDoItemDescription.value = '';
+            toDoItemDueDate.value = '';
+            toDoItemPriority.value = '';
+        }
+
+        function addToDoItemAndClearForm() {
+            createNewToDo();
+            clearAddToDoItemForm();
+        }
 
     }
 
@@ -196,7 +212,8 @@ function addNewProject() {
 
     buttonContainer.append(addToDoItemButton);
 
-    addToDoItemButton.addEventListener('click', createNewToDo);
+    // addToDoItemButton.addEventListener('click', createNewToDo);
+    addToDoItemButton.addEventListener('click', addToDoItemAndClearForm);
 
     function createNewToDo() {
         const createdNewToDo = document.createElement("div");
@@ -260,6 +277,22 @@ function addNewProject() {
         // const newProjectButtonQuerySelector = document.querySelector('#submit');
         const projectsDiv = document.querySelector('.projects');
         projectsDiv.removeChild(newProjectDiv);
+    }
+
+    function clearAddToDoItemForm() {
+        const toDoItemTitle = document.querySelector('#title');
+        const toDoItemDescription = document.querySelector('#description');
+        const toDoItemDueDate = document.querySelector('#duedate');
+        const toDoItemPriority = document.querySelector('#priority');
+        toDoItemTitle.value = '';
+        toDoItemDescription.value = '';
+        toDoItemDueDate.value = '';
+        toDoItemPriority.value = '';
+    }
+
+    function addToDoItemAndClearForm() {
+        createNewToDo();
+        clearAddToDoItemForm();
     }
 
 }
