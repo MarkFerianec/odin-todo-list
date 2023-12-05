@@ -40,22 +40,22 @@ function displayProjects() {
             const toDoItemTitleDiv = document.createElement("div");
             const toDoItemTitle = document.querySelector('#title');
             let titleOfToDoItem = toDoItemTitle.value;
-            toDoItemTitleDiv.textContent = titleOfToDoItem;
+            toDoItemTitleDiv.textContent = 'Title: ' + titleOfToDoItem;
 
             const toDoItemDescriptionDiv = document.createElement("div");
             const toDoItemDescription = document.querySelector('#description');
             let descriptionOfToDoItem = toDoItemDescription.value;
-            toDoItemDescriptionDiv.textContent = descriptionOfToDoItem;
+            toDoItemDescriptionDiv.textContent = 'Description: ' + descriptionOfToDoItem;
 
             const toDoItemDueDateDiv = document.createElement("div");
             const toDoItemDueDate = document.querySelector('#duedate');
             let dueDateOfToDoItem = toDoItemDueDate.value;
-            toDoItemDueDateDiv.textContent = dueDateOfToDoItem;
+            toDoItemDueDateDiv.textContent = 'Due Date: ' + dueDateOfToDoItem;
 
             const toDoItemPriorityDiv = document.createElement("div");
             const toDoItemPriority = document.querySelector('#priority');
             let priorityOfToDoItem = toDoItemPriority.value;
-            toDoItemPriorityDiv.textContent = priorityOfToDoItem;
+            toDoItemPriorityDiv.textContent = 'Priority: ' + priorityOfToDoItem;
 
             createdNewToDo.appendChild(toDoItemTitleDiv);
             createdNewToDo.appendChild(toDoItemDescriptionDiv);
@@ -221,22 +221,22 @@ function addNewProject() {
         const toDoItemTitleDiv = document.createElement("div");
         const toDoItemTitle = document.querySelector('#title');
         let titleOfToDoItem = toDoItemTitle.value;
-        toDoItemTitleDiv.textContent = titleOfToDoItem;
+        toDoItemTitleDiv.textContent = 'Title: ' + titleOfToDoItem;
 
         const toDoItemDescriptionDiv = document.createElement("div");
         const toDoItemDescription = document.querySelector('#description');
         let descriptionOfToDoItem = toDoItemDescription.value;
-        toDoItemDescriptionDiv.textContent = descriptionOfToDoItem;
+        toDoItemDescriptionDiv.textContent = 'Description: ' +  descriptionOfToDoItem;
 
         const toDoItemDueDateDiv = document.createElement("div");
         const toDoItemDueDate = document.querySelector('#duedate');
         let dueDateOfToDoItem = toDoItemDueDate.value;
-        toDoItemDueDateDiv.textContent = dueDateOfToDoItem;
+        toDoItemDueDateDiv.textContent = 'Due Date: ' + dueDateOfToDoItem;
 
         const toDoItemPriorityDiv = document.createElement("div");
         const toDoItemPriority = document.querySelector('#priority');
         let priorityOfToDoItem = toDoItemPriority.value;
-        toDoItemPriorityDiv.textContent = priorityOfToDoItem;
+        toDoItemPriorityDiv.textContent = 'Priority: ' + priorityOfToDoItem;
 
         createdNewToDo.appendChild(toDoItemTitleDiv);
         createdNewToDo.appendChild(toDoItemDescriptionDiv);
